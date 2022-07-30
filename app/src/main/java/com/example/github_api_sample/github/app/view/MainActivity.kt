@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupBinding()
+        setupButton()
         observeLiveData()
         viewModel.onCreate()
     }
@@ -30,9 +31,21 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
     }
 
+    private fun setupButton() {
+        binding.btnRepositories.setOnClickListener { viewModel.onFetchRepositories() }
+    }
+
     private fun observeLiveData() {
         viewModel.userData.observe(this) {
             binding.tvName.text = it.name
+        }
+
+        viewModel.repositories.observe(this) {
+            it.forEach { repository ->
+                Log.d(
+                    "Tatsuyað", "repository: ${repository}"
+                )
+            }
         }
     }
 }

@@ -9,8 +9,8 @@ class FetchUserUseCase(
     private val gitHubUserRepository: GitHubUserRepository = GitHubUserRepositoryImpl()
 ) {
 
-    suspend fun invoke(name: String): Result<User> {
-        return gitHubUserRepository.fetchUser(name)
+    suspend fun invoke(userName: String): Result<User> {
+        return gitHubUserRepository.fetchUser(userName)
     }
 
 }
