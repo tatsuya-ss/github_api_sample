@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33958333333333335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_git_hub.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/github_repository_adapter.xml" value="0.254981884057971" />
       </map>
     </option>
   </component>
