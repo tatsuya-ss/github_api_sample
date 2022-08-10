@@ -2,6 +2,7 @@ package com.example.github_api_sample.github.data.service
 
 import com.example.github_api_sample.github.data.entity.Repository
 import com.example.github_api_sample.github.data.entity.User
+import com.example.github_api_sample.github.data.rest.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -26,6 +27,7 @@ class CreateService {
         val retrofit = Retrofit.Builder()
             .baseUrl(GITHUB_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
         return retrofit.create(GitHubService::class.java)
     }
